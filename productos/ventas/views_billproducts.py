@@ -33,22 +33,22 @@ def MetBillsProducts(request):
 @api_view(['GET', 'PUT', 'DELETE'])
 def billsproducts_detail(request,key):
     try:
-        billpro = BillsProducts.objects.get(pk=key)
+        BillPro = BillsProducts.objects.get(pk=key)
     except BillsProducts.DoesNotExist:
         return HttpResponse(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = ProductsSerializer(billpro)
+        serializer = BillsProductsSerializer(BillPro)
         return JsonResponse(serializer.data)
 
     elif request.method == 'PUT':
         data = JSONParser().parse(request)
-        serializer = BillsProductsSerializer(billpro, data=data)
+        serializer = BillsProductsSerializer(BillPro, data=data)
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(serializer.data, status=status.HTTP_200_OK)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
-        billpro.delete()
+        BillPro.delete()
         return HttpResponse(status=status.HTTP_204_NO_CONTENT)
