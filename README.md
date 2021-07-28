@@ -12,11 +12,11 @@ CLIENTS
    * Consulta todos los clientes 
    http://127.0.0.1:8000/api/clients
    * Consulta todos los clientes por id 
-   http://127.0.0.1:8000/api/clients/4
+   http://127.0.0.1:8000/api/clients/1
    * Consulta los clientes por por nombre especifico
-   http://127.0.0.1:8000/api/clients/query/nombre/Julian
+   http://127.0.0.1:8000/api/clients/query/nombre/prueba
    * Consulta los clientes por por apellido 
-   http://127.0.0.1:8000/api/clients/query/apellido/Obando
+   http://127.0.0.1:8000/api/clients/query/apellido/prueba2
    
  * METODO POST (ejemplo agregar un client)
     {
@@ -27,17 +27,17 @@ CLIENTS
     }
     
   * METODO PUT (ejemplo actualizar un client)
-   * http://127.0.0.1:8000/api/clients/5
+   * http://127.0.0.1:8000/api/clients/1
   
   * METODO DELETE (ejemplo eliminar un client)
-   * http://127.0.0.1:8000/api/clients/5
+   * http://127.0.0.1:8000/api/clients/1
    
 BILLS
 * METODO GET (ejemplo de consultas)
    * Consulta todas las bills 
    http://127.0.0.1:8000/api/bills
    * Consulta las bills por id 
-   http://127.0.0.1:8000/api/bills/2
+   http://127.0.0.1:8000/api/bills/1
    * Consulta las bills por por nombre de compañia especifico
    http://127.0.0.1:8000/api/bills/query/nombre/fruver
    * Consulta las bills por por nit
@@ -49,14 +49,14 @@ BILLS
 	"company_name": "jumbo",
 	"nit": 123,
 	"code": 10,
-	"client_id": 4
+	"client_id": 1
     }
     
   * METODO PUT (ejemplo actualizar bills)
-  * http://127.0.0.1:8000/api/bills/5
+  * http://127.0.0.1:8000/api/bills/1
   
   * METODO DELETE (ejemplo eliminar bills)
-   * http://127.0.0.1:8000/api/clients/5
+   * http://127.0.0.1:8000/api/clients/1
    
 PRODUCTS
 * METODO GET (ejemplo de consultas)
@@ -77,10 +77,10 @@ PRODUCTS
     }
     
  * METODO PUT (ejemplo actualizar products)
-  * http://127.0.0.1:8000/api/products/5
+  * http://127.0.0.1:8000/api/products/1
   
   * METODO DELETE (ejemplo eliminar products)
-   * http://127.0.0.1:8000/api/products/5
+   * http://127.0.0.1:8000/api/products/1
 
 BILLSPRODUCTS
 * METODO GET (ejemplo de consultas)
@@ -91,19 +91,24 @@ BILLSPRODUCTS
 
  * METODO POST (ejemplo agregar billsproducts) 
    {
-	"bill_id": 4,
-	"product_id": 3
+	"bill_id": 1,
+	"product_id": 1
    }
    
 * METODO PUT (ejemplo actualizar billsproducts)
-  * http://127.0.0.1:8000/api/products/4
+  * http://127.0.0.1:8000/api/products/1
 
 * METODO DELETE (ejemplo eliminar billsproducts)
-   * http://127.0.0.1:8000/api/products/4
-   
-- Se creao toda la Api REST con el crud, los endpoint no los     alcance a realizar
+   * http://127.0.0.1:8000/api/products/1
 
-- La base de datos esta magrada con sqlite3 y tambien tiene la conexion de mysql.
+* Usuario: prueba
+* Password: prueba
+* correo: prueba@gmail.com
+* authtoken 742711b298505d7572346d9c7c0138c2406fc574
+   
+- Se creao toda la Api REST con el crud.
+
+- Base de datos mysql.
    
    
    
